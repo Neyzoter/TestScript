@@ -1,5 +1,9 @@
 # TestScript
 
+```
+![](https://img.shields.io/badge/license-MIT-000000.svg)
+```
+
 ## description
 
 **linux** folder contains some useful bash files which can be run on linux.
