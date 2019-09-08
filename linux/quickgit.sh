@@ -32,4 +32,4 @@ git commit -m "quick git"
 git push
 echo "Git spring-example end..."
 
-echo "\n\[QUICKGIT END\]\n"
+echo "[QUICKGIT END]"
