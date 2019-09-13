@@ -8,6 +8,8 @@
 
 **network** folder contains some scripts for network test.
 
+**kafka** folder contains some scripts for kafka, which should copy to KAFKA_HOME.
+
 ## contact
 
 If you have any question, please send email to me.
