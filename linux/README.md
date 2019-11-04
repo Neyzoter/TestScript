@@ -11,3 +11,12 @@
 * **quickgit.sh**
 
   Quickly git add , commit and push codes.
+  
+* **scpdown.sh**
+
+  scp down load file from remote server.
+
+* **scpup.sh**
+
+  scp up load file to remote server.
+
