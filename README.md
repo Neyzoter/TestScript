@@ -10,6 +10,10 @@
 
 **kafka** folder contains some scripts for kafka, which should copy to KAFKA_HOME.
 
+**git** folder contains some scripts for git.
+
+**sql** folder contails some scripts for db configuration and operation.
+
 ## contact
 
 If you have any question, please send email to me.
