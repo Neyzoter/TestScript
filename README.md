@@ -14,6 +14,8 @@
 
 **sql** folder contails some scripts for db configuration and operation.
 
+**docker** folder contains some scripts for docker configuration and operation.
+
 ## contact
 
 If you have any question, please send email to me.
