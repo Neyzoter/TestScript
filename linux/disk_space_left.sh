@@ -2,7 +2,7 @@
 
 ############get test path###############
 if [ -z $1 ];then
- read -p "input the path(e.g: /root):" path
+ path="."
 else
  path=$1
 fi
@@ -74,4 +74,4 @@ if [ -z ${path_avail} ];then
    path_avail=${root_avail}
 fi
 
-echo "${path_avail}"
+echo "${path_avail}" >> /home/scc/code/TestScript/linux/disk_space.log

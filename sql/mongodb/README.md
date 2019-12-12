@@ -7,3 +7,9 @@
 * **mongoimport.sh**
 
   import data from a file to mongodb.
+  
+* **mongoupdate.sh**
+
+  mongodb update member.
+
+  
