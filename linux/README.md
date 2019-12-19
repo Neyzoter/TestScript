@@ -20,3 +20,6 @@
 
   scp up load file to remote server.
 
+* **auto_install**
+
+  auto-install is a auto-installing scripts-set, which is convenient to install our project.
