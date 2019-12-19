@@ -2,11 +2,11 @@
 
 * **linserver.sh**
 
-  log in your server.
+  Log in your server.
 
 * **runmgd.sh**
 
-  run mongod no hang up and background.
+  Run mongod no hang up and background.
 
 * **quickgit.sh**
 
@@ -14,12 +14,12 @@
   
 * **scpdown.sh**
 
-  scp down load file from remote server.
+  Scp down load file from remote server.
 
 * **scpup.sh**
 
-  scp up load file to remote server.
+  Scp up load file to remote server.
 
 * **auto_install**
 
-  auto-install is a auto-installing scripts-set, which is convenient to install our project.
+  Auto-install is a auto-installing scripts-set, which is convenient to install our project.

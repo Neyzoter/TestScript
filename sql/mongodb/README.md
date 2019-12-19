@@ -2,14 +2,14 @@
 
 * **mongoexport.sh**
 
-  export data as json file from mongodb.
+  Export data as json file from mongodb.
 
 * **mongoimport.sh**
 
-  import data from a file to mongodb.
+  Import data from a file to mongodb.
   
 * **mongoupdate.sh**
 
-  mongodb update member.
+  Mongodb update member.
 
   
