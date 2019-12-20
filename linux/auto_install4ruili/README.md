@@ -15,3 +15,7 @@
 * **`step4`**
 
   Startup docker container.
+  
+* **`mgd_add_app_user`**
+
+  Insert app's user to mongodb, which needed by our app to auth user.
