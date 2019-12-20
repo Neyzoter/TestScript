@@ -25,7 +25,7 @@ if [ $app = $server ];then
   echo "Chmod 777 script"
   sudo chmod 777 ./script/updateCpuMemDisk4App.sh
   # first run, no dependency
-  ./script/updateCpuMemDisk4App.sh 
+  sudo ./script/updateCpuMemDisk4App.sh 
   
 elif [ $db = $server ];then
   echo "Preparing for \"$db\"" 
