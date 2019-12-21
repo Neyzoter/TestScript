@@ -19,3 +19,9 @@
 * **`mgd_add_app_user`**
 
   Insert app's user to mongodb, which needed by our app to auth user.
+  
+* **`mysql_init`**
+
+  Init mysql with sql files.
+
+  
