@@ -1,5 +1,12 @@
 #!/bin/bash
 
+echo "######################################"
+echo "#                                    #"
+echo "#   浙江大学NESC课题组物联网实验室   #"
+echo "#      IoT Lab of ZJU NESC Group     #"
+echo "#                                    #"
+echo "######################################"
+echo ""
 app="app"
 db="db"
 echo "choose app or db:"
@@ -39,7 +46,7 @@ if [ $app = $server ];then
   sudo rpm -ivh *.rpm --nodeps --force
   echo "Redis installed OK"
   echo "Starting Redis"
-  service redis start
+  systemctl start redis
 elif [ $db = $server ];then
   echo "Installing for \"$db\"" 
   # mongodb
@@ -67,7 +74,6 @@ elif [ $db = $server ];then
   sudo sed -ri "s#path:.*#path: /data/log/mongod.log#g" /etc/mongod.conf
   echo "Changing bindIp to 0.0.0.0"
   sudo sed -ri "s#bindIp:.*#bindIp: 0.0.0.0#g" /etc/mongod.conf
-  
   # rm mariadb
   echo "Uninstalling mariadb"
   sudo rpm -qa|grep mariadb
@@ -86,7 +92,7 @@ elif [ $db = $server ];then
     sudo echo "bind-address=0.0.0.0" >> /etc/my.cnf
   fi
   echo "starting mysqld.service"
-  service mysqld start
+  systemctl start mysqld
   echo "MySQL Initial PASSWORD : "
   grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
   

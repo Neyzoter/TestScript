@@ -1,5 +1,13 @@
 #!/bin/bash
 
+echo "######################################"
+echo "#                                    #"
+echo "#   浙江大学NESC课题组物联网实验室   #"
+echo "#      IoT Lab of ZJU NESC Group     #"
+echo "#                                    #"
+echo "######################################"
+echo ""
+
 cd $(dirname $0)
 
 dir_cmd=`pwd`
@@ -25,4 +33,4 @@ sudo docker run --env-file=./script/deploy.env --name ota_backend -d -p 9090:909
 
 sudo docker run --name ota_frontend -d -p 9099:80 registry.cn-hangzhou.aliyuncs.com/ruili/ota_fronted:0.3.5
 
-sudo docker run --network=host -v /usr/local/rcloud/:/usr/local/rcloud/ -v $dir/script/:$dir/script/ neyzoter/rcloud:1.0.0
+sudo docker run --name rcloud -d -p 8089:8089 -p 5001:5001 -v /usr/local/rcloud/:/usr/local/rcloud/ -v $dir/script/:$dir/script/ neyzoter/rcloud:1.0.0

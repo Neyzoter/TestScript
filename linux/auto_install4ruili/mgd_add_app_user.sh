@@ -1,7 +1,15 @@
 #!/bin/bash
 
+echo "######################################"
+echo "#                                    #"
+echo "#   浙江大学NESC课题组物联网实验室   #"
+echo "#      IoT Lab of ZJU NESC Group     #"
+echo "#                                    #"
+echo "######################################"
+echo ""
 echo "This tool is used to add app user"
 echo "Client can login with this user"
+echo "[ATTENTION] Make mongodb run in NO-AUTH mode"
 echo ""
 data_cmd=`date +%Y-%m-%dT%H:%M:%S`
 function addUser()

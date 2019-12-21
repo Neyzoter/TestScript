@@ -1,5 +1,16 @@
 #!/bin/bash
 
+echo "######################################"
+echo "#                                    #"
+echo "#   浙江大学NESC课题组物联网实验室   #"
+echo "#      IoT Lab of ZJU NESC Group     #"
+echo "#                                    #"
+echo "######################################"
+echo ""
+
+cat ./README-*
+
+echo ""
 app="app"
 db="db"
 echo "choose app or db:"
@@ -31,7 +42,7 @@ elif [ $db = $server ];then
   echo "Preparing for \"$db\"" 
   # cp script to shell
   echo "Chmod 777 script"
-  sudo chmod 777 ./script/updateCpuMemDisk4App.sh
+  sudo chmod 777 ./script/updateCpuMemDisk4Db.sh
 fi
 
 echo "Preparing end"
