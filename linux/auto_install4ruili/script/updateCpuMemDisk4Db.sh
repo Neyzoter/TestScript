@@ -16,11 +16,9 @@ cmd="$cmd_left$cpu_cmd$cmd_right"
 admin4rcloud=`cat ./rcloud_configuration.properties | awk '/db.mongodb.user/' | sed -r "s#[ ]*##g" | sed -r "s#db.mongodb.user=##g"`
 psw4rcloud=`cat ./rcloud_configuration.properties | awk '/db.mongodb.password/' | sed -r "s#[ ]*##g" | sed -r "s#db.mongodb.password=##g"`
 adminDb4rcloud=`cat ./rcloud_configuration.properties | awk '/db.mongodb.adminDb/' | sed -r "s#[ ]*##g" | sed -r "s#db.mongodb.adminDb=##g"`
-# data : 需要访问的数据库；admin : 管理员保存的数据库
 cmd_all="echo \"$cmd\" | mongo data -u $admin4rcloud -p $psw4rcloud --authenticationDatabase $adminDb4rcloud --shell"
 echo "$cmd_all"
 eval $cmd_all
-# echo $cmd | mongo data --shell
 
 
 # 获取cpu逻辑核个数
@@ -28,12 +26,9 @@ kernel_cmd=`cat /proc/cpuinfo |grep "processor"|wc -l`
 cmd_left="db.dbState.update({},{\\\$set:{'db_cpu_logicalKernel_num':'"
 cmd_right="'}},{upsert:true});"
 cmd="$cmd_left$kernel_cmd$cmd_right"
-# data : 需要访问的数据库；admin : 管理员保存的数据库
 cmd_all="echo \"$cmd\" | mongo data -u $admin4rcloud -p $psw4rcloud --authenticationDatabase $adminDb4rcloud --shell"
 echo "$cmd_all"
 eval $cmd_all
-
-# echo $cmd | mongo data --shell
 
 # 获取空闲磁盘空间
 if [ -z $1 ];then
@@ -45,24 +40,18 @@ space_cmd=`df -BG $path | awk 'NR==2{print $4}' | sed "s/G//"`
 cmd_left="db.dbState.update({},{\\\$set:{'db_disk_freeSpaceG':'"
 cmd_right="'}},{upsert:true});"
 cmd="$cmd_left$space_cmd$cmd_right"
-
-# data : 需要访问的数据库；admin : 管理员保存的数据库
 cmd_all="echo \"$cmd\" | mongo data -u $admin4rcloud -p $psw4rcloud --authenticationDatabase $adminDb4rcloud --shell"
 echo "$cmd_all"
 eval $cmd_all
 
-# echo $cmd | mongo data --shell
 
 # 获取内存利用率
 mem_cmd=`free | grep "Mem:" |  awk '{print ($3)/$2}'`
 cmd_left="db.dbState.update({},{\\\$set:{'db_mem_usagerate':'"
 cmd_right="'}},{upsert:true});"
 cmd="$cmd_left$mem_cmd$cmd_right"
-
-# data : 需要访问的数据库；admin : 管理员保存的数据库
 cmd_all="echo \"$cmd\" | mongo data -u $admin4rcloud -p $psw4rcloud --authenticationDatabase $adminDb4rcloud --shell"
 echo "$cmd_all"
 eval $cmd_all
 
-# echo $cmd | mongo data --shell
 
