@@ -23,3 +23,7 @@
 * **auto_install**
 
   Auto-install is a auto-installing scripts-set, which is convenient to install our project.
+  
+* **dos2unixUtil**
+
+  Transfrom the CRLF to LF.
