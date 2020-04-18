@@ -27,3 +27,7 @@
 * **dos2unixUtil**
 
   Transfrom the CRLF to LF.
+  
+* **analException**
+
+  Analysis Exceptions in log file.
