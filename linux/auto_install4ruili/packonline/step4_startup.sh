@@ -33,7 +33,7 @@ sudo docker run --env-file=./script/deploy.env --name ota_backend -d -p 9090:909
 
 sudo docker run --name ota_frontend -d -p 9099:80 ota_frontend:0.3.5
 
-sudo docker run --name rcloud -d -p 8089:8089 -p 5001:5001 -v /usr/local/rcloud/:/usr/local/rcloud/ -v $dir/script/:$dir/script/ neyzoter/rcloud:1.0.0
+sudo docker run --name rcloud -d -p 8089:8089 -p 5001:5001/udp -v /usr/local/rcloud/:/usr/local/rcloud/ -v $dir/script/:$dir/script/ neyzoter/rcloud:1.0.0
 
 echo ""
 sudo docker ps

@@ -1,27 +1,26 @@
--- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
---
--- Host: localhost    Database: fota_dev_dev
--- ------------------------------------------------------
--- Server version	5.7.29
+/*
+ Navicat Premium Data Transfer
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+ Source Server         : Aliyun_MySQL
+ Source Server Type    : MySQL
+ Source Server Version : 50729
+ Source Host           : 114.55.104.50:3306
+ Source Schema         : fota_dev_dev
 
---
--- Table structure for table `fota_images`
---
+ Target Server Type    : MySQL
+ Target Server Version : 50729
+ File Encoding         : 65001
 
+ Date: 01/04/2020 15:15:39
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for fota_images
+-- ----------------------------
 DROP TABLE IF EXISTS `fota_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fota_images` (
   `gid` int(255) NOT NULL AUTO_INCREMENT,
   `firmware_id` varchar(32) NOT NULL,
@@ -35,26 +34,24 @@ CREATE TABLE `fota_images` (
   `gmtupdate` datetime(6) DEFAULT NULL,
   `tenant_id` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`gid`,`firmware_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `fota_images`
---
+-- ----------------------------
+-- Records of fota_images
+-- ----------------------------
+BEGIN;
+INSERT INTO `fota_images` VALUES (50, '0592ef9cc9db42eab04d97d16fe3d7af', '单通道控制器', 'eqwe', 'Sorlcl', '13587592960', '0.0.2', '212', '2020-04-01 10:17:03.045000', '2020-04-01 10:17:03.045000', NULL);
+INSERT INTO `fota_images` VALUES (51, 'ee0c35c93213460580702346a06a5559', '单通道控制器', '前桥', 'Sorlcl', '13587592960', '0.1.1', '上传测试', '2020-04-01 10:19:44.619000', '2020-04-01 10:19:44.619000', NULL);
+INSERT INTO `fota_images` VALUES (52, 'aff498108ea64542bdf5e03c72a92b41', '双通道控制器', '后桥', 'Sorlcl', '13587592960', '1.0.0', '上传后桥测试程序', '2020-04-01 10:27:49.983000', '2020-04-01 10:27:49.983000', NULL);
+INSERT INTO `fota_images` VALUES (55, 'e2ceb830db8e44d3b84b7c5dce571f50', '单通道控制器', '前桥', 'liubo', '13656719502', '1.0.0', '前桥普通用户', '2020-04-01 10:54:09.149000', '2020-04-01 10:54:09.149000', NULL);
+INSERT INTO `fota_images` VALUES (56, '5e843f0efe3d4536a39a98dcf0536d0b', '中央控制器', '中央', 'liubo', '13656719502', '1.0.0', '中央普通用户', '2020-04-01 11:13:32.444000', '2020-04-01 11:13:32.444000', NULL);
+INSERT INTO `fota_images` VALUES (57, '959fe4dad3ef4801afeee4dfb4e6dec1', '双通道控制器', '后桥', 'liubo', '13656719502', '1.0.0', '后桥普通用户', '2020-04-01 14:09:45.610000', '2020-04-01 14:09:45.610000', NULL);
+COMMIT;
 
-LOCK TABLES `fota_images` WRITE;
-/*!40000 ALTER TABLE `fota_images` DISABLE KEYS */;
-INSERT INTO `fota_images` VALUES (41,'36fe8db92475471b85919703a7062fce','中央控制器','HelloWorld','Sorlcl','13587592960','1.0.0','Upload by SongChaochao','2020-02-23 20:02:24.020000','2020-02-23 20:02:24.020000',NULL);
-/*!40000 ALTER TABLE `fota_images` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `fota_load_history`
---
-
+-- ----------------------------
+-- Table structure for fota_load_history
+-- ----------------------------
 DROP TABLE IF EXISTS `fota_load_history`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fota_load_history` (
   `gid` int(255) NOT NULL AUTO_INCREMENT,
   `imei` varchar(32) DEFAULT NULL,
@@ -67,25 +64,12 @@ CREATE TABLE `fota_load_history` (
   `gmtmodified` datetime(6) DEFAULT NULL,
   `tenant_id` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`gid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `fota_load_history`
---
-
-LOCK TABLES `fota_load_history` WRITE;
-/*!40000 ALTER TABLE `fota_load_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `fota_load_history` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `fota_loaders`
---
-
+-- ----------------------------
+-- Table structure for fota_loaders
+-- ----------------------------
 DROP TABLE IF EXISTS `fota_loaders`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fota_loaders` (
   `gid` int(255) NOT NULL AUTO_INCREMENT,
   `imei` varchar(32) NOT NULL,
@@ -98,25 +82,19 @@ CREATE TABLE `fota_loaders` (
   `gmtupdate` datetime(6) DEFAULT NULL COMMENT '采集器刷新时间',
   `gmtmodified` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`gid`,`imei`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `fota_loaders`
---
+-- ----------------------------
+-- Records of fota_loaders
+-- ----------------------------
+BEGIN;
+INSERT INTO `fota_loaders` VALUES (19, '865192041826917', '460048697414689', NULL, 24, 0, 23, '2020-04-01 10:18:28.623000', '2020-04-01 13:34:20.573000', '2020-04-01 11:25:19.673000');
+COMMIT;
 
-LOCK TABLES `fota_loaders` WRITE;
-/*!40000 ALTER TABLE `fota_loaders` DISABLE KEYS */;
-/*!40000 ALTER TABLE `fota_loaders` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `fota_permission`
---
-
+-- ----------------------------
+-- Table structure for fota_permission
+-- ----------------------------
 DROP TABLE IF EXISTS `fota_permission`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fota_permission` (
   `gid` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(255) DEFAULT NULL COMMENT '菜单编码',
@@ -134,25 +112,22 @@ CREATE TABLE `fota_permission` (
   PRIMARY KEY (`gid`) USING BTREE,
   UNIQUE KEY `FK_CODE` (`code`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `fota_permission`
---
+-- ----------------------------
+-- Records of fota_permission
+-- ----------------------------
+BEGIN;
+INSERT INTO `fota_permission` VALUES (1, 'deviceManage/**', '/**', 0, '设备管理', 'deviceManage/**', 1, 1, 1, 1, '2018-12-24 13:46:51', '2019-06-03 09:21:29', 1);
+INSERT INTO `fota_permission` VALUES (2, 'uploadOtaFile/**', '/**', 0, 'ota文件管理', 'uploadOtaFile/**', 1, 1, 5, 1, '2018-12-24 13:47:01', '2019-06-03 09:21:29', 1);
+INSERT INTO `fota_permission` VALUES (3, 'issuanceOtaFile/**', '/**', 0, 'ota下发', 'issuanceOtaFile/**', 1, 1, 9, 1, '2018-12-24 13:47:07', '2019-06-03 09:21:29', 1);
+INSERT INTO `fota_permission` VALUES (4, 'otaHistory/**', '/**', 0, '升级历史', 'otaHistory/**', 1, 1, 11, 1, '2018-12-24 13:47:13', '2019-06-03 09:21:29', 1);
+INSERT INTO `fota_permission` VALUES (5, 'user/**', '/**', 0, '用户管理', 'user/**', 1, 1, 20, 1, '2020-02-23 21:46:51', '2020-02-23 21:46:51', 1);
+COMMIT;
 
-LOCK TABLES `fota_permission` WRITE;
-/*!40000 ALTER TABLE `fota_permission` DISABLE KEYS */;
-INSERT INTO `fota_permission` VALUES (1,'deviceManage/**','/**',0,'设备管理','deviceManage/**',1,1,1,1,'2018-12-24 05:46:51','2019-06-03 01:21:29',1),(2,'uploadOtaFile/**','/**',0,'ota文件管理','uploadOtaFile/**',1,1,5,1,'2018-12-24 05:47:01','2019-06-03 01:21:29',1),(3,'issuanceOtaFile/**','/**',0,'ota下发','issuanceOtaFile/**',1,1,9,1,'2018-12-24 05:47:07','2019-06-03 01:21:29',1),(4,'otaHistory/**','/**',0,'升级历史','otaHistory/**',1,1,11,1,'2018-12-24 05:47:13','2019-06-03 01:21:29',1),(5,'user/**','/**',0,'用户管理','user/**',1,1,20,1,'2020-02-23 13:46:51','2020-02-23 13:46:51',1);
-/*!40000 ALTER TABLE `fota_permission` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `fota_role`
---
-
+-- ----------------------------
+-- Table structure for fota_role
+-- ----------------------------
 DROP TABLE IF EXISTS `fota_role`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fota_role` (
   `gid` int(32) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL COMMENT '角色中文，展示',
@@ -163,50 +138,45 @@ CREATE TABLE `fota_role` (
   `gmtupdate` datetime DEFAULT NULL,
   PRIMARY KEY (`gid`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `fota_role`
---
+-- ----------------------------
+-- Records of fota_role
+-- ----------------------------
+BEGIN;
+INSERT INTO `fota_role` VALUES (3, '设备管理员', 'DEVICEMANAGE', '对设备进行管理', 1, '2019-06-01 16:00:19', '2019-06-01 16:00:19');
+INSERT INTO `fota_role` VALUES (5, '超级管理员', 'ADMIN', '超级管理员', 1, '2019-06-03 01:22:15', '2019-06-03 01:22:17');
+COMMIT;
 
-LOCK TABLES `fota_role` WRITE;
-/*!40000 ALTER TABLE `fota_role` DISABLE KEYS */;
-INSERT INTO `fota_role` VALUES (3,'设备管理员','DEVICEMANAGE','对设备进行管理',1,'2019-06-01 16:00:19','2019-06-01 16:00:19'),(5,'超级管理员','ADMIN','超级管理员',1,'2019-06-03 01:22:15','2019-06-03 01:22:17');
-/*!40000 ALTER TABLE `fota_role` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `fota_role_permission`
---
-
+-- ----------------------------
+-- Table structure for fota_role_permission
+-- ----------------------------
 DROP TABLE IF EXISTS `fota_role_permission`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fota_role_permission` (
   `role_id` int(11) NOT NULL COMMENT '角色id',
   `permission_id` int(11) NOT NULL COMMENT '权限id',
   `gmtcreate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`role_id`,`permission_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `fota_role_permission`
---
+-- ----------------------------
+-- Records of fota_role_permission
+-- ----------------------------
+BEGIN;
+INSERT INTO `fota_role_permission` VALUES (3, 1, '2019-06-03 01:24:00');
+INSERT INTO `fota_role_permission` VALUES (3, 2, '2020-04-01 10:48:37');
+INSERT INTO `fota_role_permission` VALUES (3, 3, '2020-04-01 10:48:48');
+INSERT INTO `fota_role_permission` VALUES (3, 4, '2019-06-03 01:24:01');
+INSERT INTO `fota_role_permission` VALUES (5, 1, '2019-06-03 01:22:43');
+INSERT INTO `fota_role_permission` VALUES (5, 2, '2019-06-03 01:22:52');
+INSERT INTO `fota_role_permission` VALUES (5, 3, '2019-06-03 01:23:05');
+INSERT INTO `fota_role_permission` VALUES (5, 4, '2019-06-03 01:23:15');
+INSERT INTO `fota_role_permission` VALUES (5, 5, '2020-02-23 21:46:51');
+COMMIT;
 
-LOCK TABLES `fota_role_permission` WRITE;
-/*!40000 ALTER TABLE `fota_role_permission` DISABLE KEYS */;
-INSERT INTO `fota_role_permission` VALUES (3,1,'2019-06-02 17:24:00'),(3,4,'2019-06-02 17:24:01'),(5,1,'2019-06-02 17:22:43'),(5,2,'2019-06-02 17:22:52'),(5,3,'2019-06-02 17:23:05'),(5,4,'2019-06-02 17:23:15'),(5,5,'2020-02-23 13:46:51');
-/*!40000 ALTER TABLE `fota_role_permission` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `fota_users`
---
-
+-- ----------------------------
+-- Table structure for fota_users
+-- ----------------------------
 DROP TABLE IF EXISTS `fota_users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fota_users` (
   `gid` int(64) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
@@ -222,52 +192,43 @@ CREATE TABLE `fota_users` (
   `gmtupdate` datetime DEFAULT NULL,
   PRIMARY KEY (`gid`,`username`,`phone`) USING BTREE,
   UNIQUE KEY `username` (`username`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `fota_users`
---
+-- ----------------------------
+-- Records of fota_users
+-- ----------------------------
+BEGIN;
+INSERT INTO `fota_users` VALUES (16, 'Sorlcl', NULL, '82ItIsNotCorrect6', 'Chenliang', '13587592960', 'Sorl_cl@163.com', 1, '技术中心电控', NULL, '2019-07-16 19:40:56', '2019-07-16 19:40:56');
+COMMIT;
 
-LOCK TABLES `fota_users` WRITE;
-/*!40000 ALTER TABLE `fota_users` DISABLE KEYS */;
-INSERT INTO `fota_users` VALUES (16,'Sorlcl',NULL,'82659456','Chenliang','13587592960','Sorl_cl@163.com',1,'技术中心电控',NULL,'2019-07-16 19:40:56','2019-07-16 19:40:56'),(17,'songchaochao',NULL,'songchaochao','Song Chaochao','15658007838','songchaochao@zju.edu.cn',1,'leader',NULL,'2020-02-23 22:06:08','2020-02-23 22:06:08');
-/*!40000 ALTER TABLE `fota_users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `fota_users_role`
---
-
+-- ----------------------------
+-- Table structure for fota_users_role
+-- ----------------------------
 DROP TABLE IF EXISTS `fota_users_role`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fota_users_role` (
   `gid` int(11) NOT NULL AUTO_INCREMENT,
   `admin_id` int(11) DEFAULT NULL COMMENT '用户id',
   `role_id` int(11) DEFAULT NULL COMMENT '角色id',
   `gmtcreate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`gid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `fota_users_role`
---
+-- ----------------------------
+-- Records of fota_users_role
+-- ----------------------------
+BEGIN;
+INSERT INTO `fota_users_role` VALUES (26, 16, 5, '2019-07-16 19:40:56');
+INSERT INTO `fota_users_role` VALUES (28, 17, 3, '2020-02-23 22:06:08');
+INSERT INTO `fota_users_role` VALUES (29, 18, 5, '2020-03-05 22:42:23');
+INSERT INTO `fota_users_role` VALUES (30, 19, 3, '2020-03-27 08:47:28');
+INSERT INTO `fota_users_role` VALUES (31, 20, 3, '2020-04-01 09:41:43');
+INSERT INTO `fota_users_role` VALUES (32, 21, 3, '2020-04-01 10:23:08');
+COMMIT;
 
-LOCK TABLES `fota_users_role` WRITE;
-/*!40000 ALTER TABLE `fota_users_role` DISABLE KEYS */;
-INSERT INTO `fota_users_role` VALUES (26,16,5,'2019-07-16 19:40:56'),(28,17,3,'2020-02-23 22:06:08');
-/*!40000 ALTER TABLE `fota_users_role` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `oauth_client_details`
---
-
+-- ----------------------------
+-- Table structure for oauth_client_details
+-- ----------------------------
 DROP TABLE IF EXISTS `oauth_client_details`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oauth_client_details` (
   `client_id` varchar(48) NOT NULL,
   `resource_ids` varchar(256) DEFAULT NULL,
@@ -282,25 +243,13 @@ CREATE TABLE `oauth_client_details` (
   `autoapprove` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`client_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `oauth_client_details`
---
+-- ----------------------------
+-- Records of oauth_client_details
+-- ----------------------------
+BEGIN;
+INSERT INTO `oauth_client_details` VALUES ('app', NULL, 'app', 'app', 'password,refresh_token', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `oauth_client_details` VALUES ('webApp', NULL, 'webApp', 'app', 'authorization_code,password,refresh_token,client_credentials', NULL, NULL, NULL, NULL, NULL, NULL);
+COMMIT;
 
-LOCK TABLES `oauth_client_details` WRITE;
-/*!40000 ALTER TABLE `oauth_client_details` DISABLE KEYS */;
-INSERT INTO `oauth_client_details` VALUES ('app',NULL,'app','app','password,refresh_token',NULL,NULL,NULL,NULL,NULL,NULL),('webApp',NULL,'webApp','app','authorization_code,password,refresh_token,client_credentials',NULL,NULL,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `oauth_client_details` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2020-02-23 23:07:26
+SET FOREIGN_KEY_CHECKS = 1;
