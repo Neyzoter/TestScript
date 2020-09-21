@@ -28,4 +28,9 @@
   
   ```
 
+* **cluster_conf.sh**
+
+  Kafka cluster and ZooKeeper cluster deploy configuration.
+
+  
   
